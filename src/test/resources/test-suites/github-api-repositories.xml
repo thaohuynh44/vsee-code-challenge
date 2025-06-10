@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="provider-visitor-calling-and-send-message-suite" parallel="methods" thread-count="3">
+    <test name="repository-tests">
+        <classes>
+            <class name="com.github.api.RepositoriesTests" />
+        </classes>
+    </test>
+</suite>
