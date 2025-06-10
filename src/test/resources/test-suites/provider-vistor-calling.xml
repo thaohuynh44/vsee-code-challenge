@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="provider-visitor-calling-and-send-message-suite" parallel="tests" thread-count="2">
+    <parameter name="testDataPath" value="test-data/communication/testVisitor.json" />
+
+    <test name="provide-test">
+        <classes>
+            <class name="com.vsee.tests.communication.ProviderMeetingTest" />
+        </classes>
+    </test>
+
+    <test name="visitor-test">
+        <classes>
+            <class name="com.vsee.tests.communication.VisitorMeetingTest"/>
+        </classes>
+    </test>
+</suite>
