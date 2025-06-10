@@ -1,5 +1,7 @@
 package com.github.api.specs;
 
+import com.vsee.utils.Config;
+import com.vsee.utils.Constants;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
@@ -12,7 +14,7 @@ public final class InitialSpecs {
 
     public static RequestSpecification defaultRequestSpec() {
         return new RequestSpecBuilder().
-                setBaseUri("https://api.github.com").
+                setBaseUri(Config.get(Constants.GITHUB_API_URL)).
                 build();
     }
 

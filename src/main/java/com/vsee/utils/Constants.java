@@ -10,6 +10,7 @@ public class Constants {
     public static final String VISITOR_ROOM_URL = "visitorRoom.url";
     public static final String PROVIDER_LOGIN_URL = "providerLogin.url";
     public static final String PROVIDER_DASHBOARD_URL = "providerDashboard.url";
+    public static final String GITHUB_API_URL="gitHubApi.url";
 
     public static final String DEFAULT_PROVIDER_USR = "providerEmail";
     public static final String DEFAULT_PROVIDER_PWD = "providerPassword";
