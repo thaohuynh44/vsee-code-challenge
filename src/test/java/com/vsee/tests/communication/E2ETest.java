@@ -11,14 +11,11 @@ import com.vsee.utils.Constants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class E2ETest extends BaseTest {
 
@@ -42,11 +39,6 @@ public class E2ETest extends BaseTest {
         userADriver = new ChromeDriver(getChromeOptions());
         userBDriver = new ChromeDriver(getChromeOptions());
     }
-
-//    @BeforeTest
-//    public void setUpPages() {
-//        this.ew
-//    }
 
     @Test
     public void e2eProviderVisitorStartCallAndSendChatTest() throws InterruptedException {
@@ -90,5 +82,8 @@ public class E2ETest extends BaseTest {
         Assert.assertEquals(actualReceivedMessages.getFirst(), "This is the test message, send to userA", String.format("Incorrect received message content, expected: %s but got: %s","This is the test message, send to userA", actualReceivedMessages.getFirst()));
         providerConferenceRoomPage.clickOnHangUpButton();
         visitorConferenceRoomPage.clickOnHangUpButton();
+
+        userADriver.quit();
+        userBDriver.quit();
     }
 }
