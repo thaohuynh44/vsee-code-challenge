@@ -74,12 +74,13 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>chrome</browser>
-                        <selenium.grid.enabled>true</selenium.grid.enabled>
+                        <selenium.grid.enabled>false</selenium.grid.enabled>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <file>test-suite.xml</file>
+                        <file>src/test/resources/test-suites/provider-vistor-calling.xml</file>
+                        <file>src/test/resources/test-suites/github-api-repositories.xml</file>
                     </suiteXmlFiles>
-                    <threadCount>1</threadCount>
+                    <threadCount>4</threadCount>
                     <reportsDirectory>target/test-output</reportsDirectory>
                 </configuration>
             </plugin>
