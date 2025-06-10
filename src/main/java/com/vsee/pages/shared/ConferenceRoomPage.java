@@ -28,6 +28,12 @@ public class ConferenceRoomPage extends BasePage {
     @FindBy(css = ".webchat-message-bubble")
     private List<WebElement> chatboxMessages;
 
+    @FindBy(css = "button[data-chatroom]")
+    private WebElement chatRoomButton;
+
+    @FindBy(css = ".hangup-button")
+    private WebElement hangUpButton;
+
     public ConferenceRoomPage(WebDriver driver) {
         super(driver);
     }
@@ -60,6 +66,16 @@ public class ConferenceRoomPage extends BasePage {
         log.info("List of received message: {}", receivedMsg);
 
         return receivedMsg;
+    }
+
+    public void clickOnChatRoomButton() {
+        this.driver.switchTo().defaultContent();
+        this.waitAndClick(chatRoomButton);
+    }
+
+    public void clickOnHangUpButton() {
+        switchToConferenceIframe();
+        this.waitAndClick(hangUpButton);
     }
 
     private void switchToConferenceIframe() {
